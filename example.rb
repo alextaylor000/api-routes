@@ -1,7 +1,8 @@
 require 'byebug'
 
+## See the bottom of this file for the test DSL and usage
+
 class Symbol
-  # Convert a symbol into a string which can be used as a class name.
   def constantize
     self.to_s.capitalize
   end
