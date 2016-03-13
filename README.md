@@ -11,8 +11,5 @@ find the route in a hash, and put together a request object that sends the
 data through. This might be a really cool way of implementing super-thin wrappers
 around APIs.
 
-I'm playing around with the concept in `routes.rb` right now. Just trying to figure
-out how to map the routes into a hash, especially how to implement the `namespace` 
-method. After that, I'd want to implement a request method that sets headers and
-bundles the whole thing into a request (see the ruby-sparkpost gem for an example).
-
+Got the routes kind of working, right now you can call stuff like @client.transmissions(5).get
+and it will work.  Need to figure out if this is the best way. 
