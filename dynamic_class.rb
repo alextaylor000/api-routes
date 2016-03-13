@@ -72,3 +72,8 @@ Client.resource :transmissions do
   endpoint :create, url: '/', method: :post
   endpoint :get, url: '/:id', method: :get
 end
+
+### test usage
+client = Client.new
+p client.transmissions.create({some: "data"}) # invoke the first endpoint
+p client.transmissions(345).get # invoke the second endpoint
