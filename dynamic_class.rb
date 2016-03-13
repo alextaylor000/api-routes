@@ -54,9 +54,17 @@ end
 # from Transmissions, using instance_eval
 def endpoint(*args)
   name, opts = args
-  define_method name do |data = nil|
-    {url: opts[:url].gsub(':id', @id.to_s), method: opts[:method]}
+  define_method name do |data = {}|
+    {
+      url: url_gen(opts[:url], @id),
+      method: opts[:method],
+      data: data
+    }
   end
+end
+
+def url_gen(str, id)
+  str.gsub(':id', id.to_s)
 end
 
 ### test interface:
